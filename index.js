@@ -90,10 +90,11 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const fetch = require("node-fetch"); // Nếu bạn chưa require
 
 setInterval(() => {
-  fetch("https://d2c67107-048a-4102-9783-737d6a940762-00-11vvuj6l40v8z.pike.replit.dev/")
-    .then(res => console.log(`🔁 Self‑ping status: ${res.status}`))
-    .catch(err => console.error('❌ Self‑ping failed:', err));
-}, 4 * 60 * 1000); // cứ 4 phút ping một lần
+  fetch("https://waguribot-production.up.railway.app")
+    .then(() => console.log("🔁 Self-ping sent"))
+    .catch((err) => console.error("❌ Self-ping failed:", err));
+}, 5 * 60 * 1000); // 5 phút
+
