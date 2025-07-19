@@ -54,7 +54,7 @@ client.on('guildMemberAdd', async member => {
   if (!channel) return;
 
   // Đường dẫn ảnh lời chào
-  const imgPath = path.join(__dirname, 'assets', 'chao-mung.jpg');
+  const imgPath = path.join(__dirname, 'assets', 'nen-chao.png');
   const attachment = new AttachmentBuilder(imgPath);
 
   // Embed chào mừng
